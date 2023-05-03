@@ -11,7 +11,8 @@
     <link rel="apple-touch-icon" href="icon.png" />
 
     <link rel="stylesheet" href="<?= base_url('plantilla/tyovent/assets/plugins/chartist/css/chartist.min.css') ?>" />
-    <link rel="stylesheet" href="<?= base_url('plantilla/css/style.css') ?>" />
+    <link rel="stylesheet" href="<?= base_url('plantilla/tyovent/main/css/style.css') ?>" />
+    <link href="<?= base_url('plantilla/tyovent/assets/plugins/fullcalender/css/fullcalendar.css') ?>" rel="stylesheet">
 </head>
 
 <body>
@@ -143,6 +144,10 @@
     </div>
 
     <script src="<?= base_url('plantilla/tyovent/assets/plugins/common/common.min.js') ?>" type="text/javascript"></script>
+    <script src="<?= base_url('plantilla/tyovent/assets/plugins/jquery-ui/jquery-ui.min.js') ?>" type="text/javascript"></script>
+    <script src="<?= base_url('plantilla/tyovent/assets/plugins/moment/moment.js') ?>" type="text/javascript"></script>
+    <script src="<?= base_url('plantilla/tyovent/assets/plugins/fullcalender/js/fullcalendar.min.js') ?>" type="text/javascript"></script>
+    <script src="<?= base_url('plantilla/tyovent/assets/plugins/fullcalender/js/fullcalendar-init.js') ?>" type="text/javascript"></script>
     <script src="<?= base_url('plantilla/tyovent/main/js/scripts.js') ?>" type="text/javascript"></script>
     <script src="<?= base_url('plantilla/tyovent/assets/plugins/circle-progress/circle-progress.min.js') ?>" type="text/javascript"></script>
 

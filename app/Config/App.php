@@ -32,6 +32,7 @@ class App extends BaseConfig
      * @phpstan-var list<string>
      */
     public array $allowedHostnames = [];
+    public array $hola = [];
 
     /**
      * --------------------------------------------------------------------------

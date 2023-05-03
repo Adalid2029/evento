@@ -44,7 +44,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="calender.html">
+                            <a href="<?=base_url('calendario')?>">
                                 <span class="fa fa-calendar"></span> Calender
                             </a>
                         </li>
