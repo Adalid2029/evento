@@ -1,0 +1,62 @@
+ERROR - 2023-05-04 00:26:22 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php(295): mysqli->query('SHOW TABLES FRO...', 0)
+#1 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SHOW TABLES FRO...')
+#2 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1408): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1427): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\codeigniter4\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\shield\src\Commands\Setup.php(308): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\shield\src\Commands\Setup.php(92): CodeIgniter\Shield\Commands\Setup->runMigrations()
+#10 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\shield\src\Commands\Setup.php(79): CodeIgniter\Shield\Commands\Setup->publishConfig()
+#11 C:\xampp\htdocs\codeigniter4\system\CLI\Commands.php(65): CodeIgniter\Shield\Commands\Setup->run(Array)
+#12 C:\xampp\htdocs\codeigniter4\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('shield:setup', Array)
+#13 C:\xampp\htdocs\codeigniter4\spark(97): CodeIgniter\CLI\Console->run()
+#14 {main}
+ERROR - 2023-05-04 00:26:59 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php(295): mysqli->query('SHOW TABLES FRO...', 0)
+#1 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SHOW TABLES FRO...')
+#2 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1408): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1427): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\codeigniter4\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\shield\src\Commands\Setup.php(308): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\shield\src\Commands\Setup.php(92): CodeIgniter\Shield\Commands\Setup->runMigrations()
+#10 C:\xampp\htdocs\codeigniter4\vendor\codeigniter4\shield\src\Commands\Setup.php(79): CodeIgniter\Shield\Commands\Setup->publishConfig()
+#11 C:\xampp\htdocs\codeigniter4\system\CLI\Commands.php(65): CodeIgniter\Shield\Commands\Setup->run(Array)
+#12 C:\xampp\htdocs\codeigniter4\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('shield:setup', Array)
+#13 C:\xampp\htdocs\codeigniter4\spark(97): CodeIgniter\CLI\Console->run()
+#14 {main}
+ERROR - 2023-05-04 00:28:00 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php(295): mysqli->query('SHOW TABLES FRO...', 0)
+#1 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SHOW TABLES FRO...')
+#2 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1408): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1427): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\codeigniter4\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\codeigniter4\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\codeigniter4\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\codeigniter4\spark(97): CodeIgniter\CLI\Console->run()
+#11 {main}
+ERROR - 2023-05-04 00:30:10 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\codeigniter4\system\Database\MySQLi\Connection.php(295): mysqli->query('SHOW TABLES FRO...', 0)
+#1 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('SHOW TABLES FRO...')
+#2 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('SHOW TABLES FRO...')
+#3 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1408): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 C:\xampp\htdocs\codeigniter4\system\Database\BaseConnection.php(1427): CodeIgniter\Database\BaseConnection->listTables()
+#5 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 C:\xampp\htdocs\codeigniter4\system\Database\MigrationRunner.php(168): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 C:\xampp\htdocs\codeigniter4\system\Commands\Database\Migrate.php(84): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 C:\xampp\htdocs\codeigniter4\system\CLI\Commands.php(65): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 C:\xampp\htdocs\codeigniter4\system\CLI\Console.php(37): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 C:\xampp\htdocs\codeigniter4\spark(97): CodeIgniter\CLI\Console->run()
+#11 {main}
