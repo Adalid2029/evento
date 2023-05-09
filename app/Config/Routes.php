@@ -31,6 +31,10 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('/calendario', 'Home::calendario');
+$routes->group('evento', static function ($routes) {
+    $routes->post('adicionar', 'Evento::insertarEvento');
+    $routes->post('eliminar', 'Evento::insertarEvento');
+});
 service('auth')->routes($routes);
 
 /*

@@ -10,17 +10,21 @@
                 </span>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                <div class="header-search">
-                    <form action="#">
-                        <div class="form-group">
-                            <i class="icofont icofont-search"></i>
-                            <input type="text" class="form-control" placeholder="Search" />
-                        </div>
-                    </form>
-                </div>
+                <?php if (auth()->user()->inGroup('administrador')) : ?>
+                    <div class="header-search">
+                        <form action="#">
+                            <div class="form-group">
+                                <i class="icofont icofont-search"></i>
+                                <input type="text" class="form-control" placeholder="Search" />
+                            </div>
+                        </form>
+                    </div>
+                <?php endif; ?>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
-                <a href="#" class="btn btn-primary create-event-btn" data-toggle="modal" data-target="#creat-event">Create New Event</a>
+                <?php if (auth()->user()->inGroup('administrador')) : ?>
+                    <a href="#" class="btn btn-primary create-event-btn" data-toggle="modal" data-target="#creat-event">Create New Event</a>
+                <?php endif; ?>
             </div>
             <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-6">
                 <div class="header-user-profile">
@@ -35,7 +39,7 @@
                             <a class="dropdown-item" href="#">Event Created</a>
                             <a class="dropdown-item" href="#">Event Attended </a>
                             <a class="dropdown-item" href="#">Elements</a>
-                            <a class="dropdown-item" href="#">Logout</a>
+                            <a class="dropdown-item" href="<?= site_url('logout') ?>">Logout</a>
                         </div>
                     </div>
                 </div>

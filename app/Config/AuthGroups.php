@@ -14,7 +14,7 @@ class AuthGroups extends ShieldAuthGroups
      * --------------------------------------------------------------------
      * The group that a newly registered user is added to.
      */
-    public string $defaultGroup = 'user';
+    public string $defaultGroup = 'usuario';
 
     /**
      * --------------------------------------------------------------------
@@ -32,25 +32,13 @@ class AuthGroups extends ShieldAuthGroups
      * @see https://github.com/codeigniter4/shield/blob/develop/docs/quickstart.md#change-available-groups for more info
      */
     public array $groups = [
-        'superadmin' => [
-            'title'       => 'Super Admin',
-            'description' => 'Complete control of the site.',
+        'administrador' => [
+            'title'       => 'Administrador',
+            'description' => 'Tendra el control total del sitio',
         ],
-        'admin' => [
-            'title'       => 'Admin',
-            'description' => 'Day to day administrators of the site.',
-        ],
-        'developer' => [
-            'title'       => 'Developer',
-            'description' => 'Site programmers.',
-        ],
-        'user' => [
-            'title'       => 'User',
-            'description' => 'General users of the site. Often customers.',
-        ],
-        'beta' => [
-            'title'       => 'Beta User',
-            'description' => 'Has access to beta-level features.',
+        'usuario' => [
+            'title'       => 'Usuario',
+            'description' => 'Tendra parte de acceso al sitio',
         ],
     ];
 
@@ -81,27 +69,16 @@ class AuthGroups extends ShieldAuthGroups
      * This defines group-level permissions.
      */
     public array $matrix = [
-        'superadmin' => [
+        'administrador' => [
             'admin.*',
             'users.*',
             'beta.*',
         ],
-        'admin' => [
+        'usuario' => [
             'admin.access',
             'users.create',
             'users.edit',
             'users.delete',
-            'beta.access',
-        ],
-        'developer' => [
-            'admin.access',
-            'admin.settings',
-            'users.create',
-            'users.edit',
-            'beta.access',
-        ],
-        'user' => [],
-        'beta' => [
             'beta.access',
         ],
     ];

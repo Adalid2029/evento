@@ -8,8 +8,9 @@ class Home extends BaseController
     {
         return view('principal');
     }
-    
-    public function calendario(){
+
+    public function calendario()
+    {
         return view('calendario');
     }
 }
