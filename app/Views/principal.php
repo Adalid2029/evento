@@ -292,64 +292,31 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h2><?= lang('EventoAdicionar.crearEvento') ?></h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <button type="button" class="close" data-dismiss="modal" id="cerrar-modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <form id="formulario-crear-evento">
                     <div class="row">
-                        <div class="col-xl-7">
+                        <div class="col-xl-12">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label class="m-t-20">TITLE</label>
-                                    <input type="text" class="form-control" id="titulo-evento" placeholder="Music Awards" />
+                                    <label class="m-t-20"><?= lang('EventoAdicionar.tituloEvento') ?></label>
+                                    <input type="text" class="form-control" id="nombre_evento" placeholder="<?= lang('EventoAdicionar.descripcionTituloEvento') ?>" />
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label class="m-t-20" for="exampleFormControlTextarea">DESCRIPTION</label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea" placeholder="In eu urna enim. Cras hendrerit ullamcorper malesuada. In justo lacus, pharetra nec imperdiet sed, congue at metus. Mauris eleifend nec neque in pretium. Nulla eleifend, enim ultrices ultrices ullamcorper." rows="4"></textarea>
+                                    <label class="m-t-20" for="descripcion_evento"><?= lang('EventoAdicionar.descripcionEvento') ?></label>
+                                    <textarea class="form-control" id="descripcion_evento" placeholder="<?= lang('EventoAdicionar.descripcionDescripcionEvento') ?>" rows="4"></textarea>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-3">
-                                    <label class="m-t-20" for="exampleFormControlTextarea">DAY</label>
+                                <div class="col-md-12">
+                                    <label class="m-t-20" for="fecha_evento"><?= lang('EventoAdicionar.fechaEvento') ?></label>
                                     <div class="input-group clockpicker">
-                                        <input type="text" class="form-control" value="15 June 2018" />
-                                        <span class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-clock-o"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="m-t-20" for="exampleFormControlTextarea">HOUR</label>
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control" value="10 am" />
-                                        <span class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-clock-o"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="m-t-20" for="exampleFormControlTextarea">MINUTE</label>
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control" value="15 m" />
-                                        <span class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-clock-o"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="m-t-20" for="exampleFormControlTextarea">DURATION</label>
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control" value="2 h 45 m" />
+                                        <input type="date" class="form-control" id="fecha_evento" />
                                         <span class="input-group-append">
                                             <span class="input-group-text">
                                                 <i class="fa fa-clock-o"></i>
@@ -360,49 +327,15 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <label class="m-t-20" for="exampleFormControlTextarea">LOCATION</label>
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control b-r-0" value="New York City" />
-                                        <span class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-crosshairs"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5">
-                            <label class="m-t-20">ADD SPONSORS</label>
-                            <form class="search-area" action="#" method="post">
-                                <input type="text" class="form-control" placeholder="Search Location" />
-                                <i class="fa fa-search"></i>
-                            </form>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label class="m-t-20" for="exampleFormControlTextarea">ADD GUEST</label>
-                                    <div class="input-group clockpicker">
-                                        <input type="text" class="form-control b-r-0" value="Search location" />
-                                        <span class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="fa fa-clock-o"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label class="m-t-20" for="val-skill">SET REMINDER</label>
-                                    <select class="form-control" id="val-skill" name="val-skill">
-                                        <option value="">Please select</option>
-                                        <option value="html">HTML</option>
-                                        <option value="css">CSS</option>
-                                        <option value="javascript">JavaScript</option>
+                                    <label class="m-t-20" for="estado_evento"><?= lang('EventoAdicionar.estadoEvento') ?></label>
+                                    <select class="form-control" id="estado_evento">
+                                        <option value=""><?= lang('EventoAdicionar.descripcionEstadoEvento') ?></option>
+                                        <option value="ACTIVO">ACTIVO</option>
+                                        <option value="INACTIVO">INACTIVO</option>
                                     </select>
                                 </div>
                             </div>
-                            <button class="btn btn-danger m-t-50" id="evento-adicionar">CREATE EVENT</button>
+                            <button class="btn btn-danger m-t-50" id="evento-adicionar"><?= lang('EventoAdicionar.crearEvento') ?></button>
                         </div>
                     </div>
                 </form>
@@ -420,9 +353,24 @@
                 url: '<?= base_url('/evento/adicionar') ?>',
                 type: 'post',
                 data: {
-                    'titulo_evento': $('#titulo-evento').val()
+                    'nombre_evento': $('#nombre_evento').val(),
+                    'descripcion_evento': $('#descripcion_evento').val(),
+                    'fecha_evento': $('#fecha_evento').val(),
+                    'estado_evento': $('#estado_evento').val(),
                 }
-            })
+            }).done(function(respuesta) {
+                if (respuesta.tipo == 'correcto') {
+                    alert('Evento creado correctamente');
+                    $('#cerrar-modal').click();
+                }
+            }).fail(function(respuesta) {
+                resp = respuesta.responseJSON.data.error;
+                mensaje = '';
+                for (const valores in resp) {
+                    mensaje += `${resp[valores]}\n`;
+                }
+                alert('El evento no se creo, ' + mensaje)
+            });
         })
     })
 </script>
