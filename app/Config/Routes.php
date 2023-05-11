@@ -35,6 +35,8 @@ $routes->get('/calendario', 'Home::calendario');
 $routes->group('evento', static function ($routes) {
     $routes->post('adicionar', 'Evento::insertarEvento');
     $routes->post('eliminar', 'Evento::insertarEvento');
+    $routes->get('listar/(:alpha)', 'Evento::listarEvento/$1');
+    $routes->get('listar', 'Evento::listarEvento');
 });
 
 service('auth')->routes($routes);

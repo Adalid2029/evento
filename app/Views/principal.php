@@ -345,8 +345,17 @@
 </div>
 <script>
     $(document).ready(function() {
+
         $('#evento-adicionar').on('click', function(e) {
             // datosFormulario = new FormData($('#formulario-crear-evento'));
+            const swalBotonesPersonalizados = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+            })
+
             e.preventDefault();
             e.stopPropagation();
             $.ajax({
@@ -360,7 +369,12 @@
                 }
             }).done(function(respuesta) {
                 if (respuesta.tipo == 'correcto') {
-                    alert('Evento creado correctamente');
+                    swalBotonesPersonalizados.fire({
+                        title: 'Correcto',
+                        text: 'El evento se creo correctamente',
+                        icon: 'success',
+                        confirmButtonText: 'Continuar'
+                    })
                     $('#cerrar-modal').click();
                 }
             }).fail(function(respuesta) {
@@ -369,7 +383,12 @@
                 for (const valores in resp) {
                     mensaje += `${resp[valores]}\n`;
                 }
-                alert('El evento no se creo, ' + mensaje)
+                swalBotonesPersonalizados.fire({
+                    title: 'Error',
+                    text: 'El evento no se creo\n' + mensaje,
+                    icon: 'error',
+                    confirmButtonText: 'Revisar'
+                })
             });
         })
     })

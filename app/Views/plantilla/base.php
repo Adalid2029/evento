@@ -35,6 +35,8 @@
     <script src="<?= base_url('plantilla/tyovent/assets/plugins/chartist/js/chartist-plugin-tooltip.min.js') ?>" type="text/javascript"></script>
     <script src="<?= base_url('plantilla/tyovent/main/js/dashboard.js') ?>" type="text/javascript"></script>
     <script src="<?= base_url('plantilla/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js') ?>" data-cf-settings="b281d09a20398d077f4bb74f-|49" defer=""></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

@@ -13,17 +13,17 @@
 
                             <li>
                                 <a class="has-arrow" href="#" aria-expanded="false">
-                                    <span class="fa fa-calendar-check-o"></span> Events
+                                    <span class="fa fa-calendar-check-o"></span> <?= lang('Menu.menuEvento') ?>
                                 </a>
                                 <ul aria-expanded="false">
                                     <li>
-                                        <a href="events-active.html">Active</a>
+                                        <a href="<?= site_url('evento/listar/ACTIVO') ?>"><?= lang('Menu.menuEventoActivo') ?></a>
                                     </li>
                                     <li>
-                                        <a href="events-drafts.html">Draft</a>
+                                        <a href="<?= site_url('evento/listar/INACTIVO') ?>"><?= lang('Menu.menuEventoInactivo') ?></a>
                                     </li>
                                     <li>
-                                        <a href="my-events.html">My Event</a>
+                                        <a href="<?= site_url('evento/listar') ?>"><?= lang('Menu.menuMisEventos') ?></a>
                                     </li>
                                 </ul>
                             </li>

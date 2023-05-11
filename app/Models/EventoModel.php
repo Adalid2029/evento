@@ -14,7 +14,7 @@ class EventoModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nombre_evento', 'descripcion_evento', 'fecha_evento', 'estado_evento'];
+    protected $allowedFields    = ['id_usuario', 'nombre_evento', 'descripcion_evento', 'fecha_evento', 'estado_evento'];
 
     // Dates
     protected $useTimestamps = false;
@@ -39,4 +39,12 @@ class EventoModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function listarEvento($columnas = '*', $condicion = [])
+    {
+        $this->select($columnas);
+        $this->join('users', 'ci_evento.id_usuario = users.id');
+        empty($condicion) ?: $this->where($condicion);
+        return $this;
+    }
 }

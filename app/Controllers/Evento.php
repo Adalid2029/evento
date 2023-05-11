@@ -9,6 +9,10 @@ use CodeIgniter\API\ResponseTrait;
 class Evento extends BaseController
 {
     protected $eventoModel;
+    public function __construct()
+    {
+        $this->eventoModel = new EventoModel();
+    }
     // insertar
     // actualizar
     // eliminar
@@ -16,8 +20,6 @@ class Evento extends BaseController
     use ResponseTrait;
     public function insertarEvento()
     {
-
-        $this->eventoModel = new EventoModel();
         $validation = \Config\Services::validation();
 
         // var_dump($this->request->getPost());
@@ -28,8 +30,8 @@ class Evento extends BaseController
         $validation->setRule('estado_evento', 'estado evento', ['required', 'in_list[ACTIVO,INACTIVO]']);
 
         if ($validation->withRequest($this->request)->run()) {
-
             $idEvento = $this->eventoModel->save([
+                'id_usuario' => user_id(),
                 'nombre_evento' => $this->request->getPost('nombre_evento'),
                 'descripcion_evento' => $this->request->getPost('descripcion_evento'),
                 'fecha_evento' => $this->request->getPost('fecha_evento'),
@@ -43,5 +45,16 @@ class Evento extends BaseController
         } else {
             return $this->respond(['tipo' => 'incorrecto', 'data' => ['error' => $validation->getErrors()]], 500);
         }
+    }
+
+    public function listarEvento($estadoEvento = '')
+    {
+        // $eventoFiltrado = $this->eventoModel->where(['estado_evento' => $estadoEvento])->findAll();
+        $estadoEvento =  $estadoEvento == '' ? ['id_usuario' => user_id()] : ['estado_evento' => $estadoEvento];
+        $eventoFiltrado = $this->eventoModel->listarEvento('id_evento, nombre_evento, descripcion_evento,fecha_evento, descripcion_evento, username, estado_evento', $estadoEvento);
+        $eventoFiltrado = $eventoFiltrado->get()->getResultArray();
+        // echo '<pre>';
+        // var_dump($eventoFiltrado->get()->getResultArray());
+        return view('evento/listar_eventos', ['evento' => $eventoFiltrado]);
     }
 }
