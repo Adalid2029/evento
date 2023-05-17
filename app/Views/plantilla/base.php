@@ -9,12 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="manifest" href="site.webmanifest" />
     <link rel="apple-touch-icon" href="icon.png" />
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="<?= base_url('plantilla/tyovent/assets/plugins/chartist/css/chartist.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('plantilla/tyovent/main/css/style.css') ?>" />
     <link href="<?= base_url('plantilla/tyovent/assets/plugins/fullcalender/css/fullcalendar.css') ?>" rel="stylesheet">
     <script src="<?= base_url('plantilla/tyovent/assets/plugins/common/common.min.js') ?>" type="text/javascript"></script>
     <script src="<?= base_url('plantilla/tyovent/assets/plugins/jquery-ui/jquery-ui.min.js') ?>" type="text/javascript"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
 </head>
 
 <body>

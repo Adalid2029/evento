@@ -22,10 +22,10 @@
 <div class="content-body">
     <div class="container">
         <div class="row justify-content-between">
-            <div class="col-xl-8">
+            <div class="col-xl-12">
                 <div class="row">
                     <?php foreach ($evento as $key => $value) : ?>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <div class="card event-card">
                                 <div class="card-header">
                                     <div class="media">
@@ -110,7 +110,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="<?= site_url("participantes/listar/" . $value['id_evento'] . "") ?>">
                                                 <i class="fa fa-sign-out"></i>
                                             </a>
                                         </li>
@@ -125,7 +125,7 @@
                     <?php endforeach ?>
                 </div>
             </div>
-            <div class="col-xl-3 left-line">
+            <!-- <div class="col-xl-3 left-line">
                 <div class="event-sideber m-l-15">
                     <h4>TOP SPONSORS</h4>
                     <div class="event-sideber-img">
@@ -193,7 +193,7 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

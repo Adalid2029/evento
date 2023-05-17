@@ -39,6 +39,16 @@ $routes->group('evento', static function ($routes) {
     $routes->get('listar', 'Evento::listarEvento');
 });
 
+$routes->group('participantes', static function ($routes) {
+    $routes->get('listar/(:num)', 'Participante::listarParticipante/$1');
+    $routes->get('listar-ajax/(:num)', 'Participante::listarParticipanteAjax/$1');
+    $routes->post('eliminar', 'Participante::eliminarParticipante');
+    $routes->get('agregar/(:num)', 'Participante::agregarParticipante/$1');
+    $routes->post('insertar', 'Participante::insertarParticipante');
+    $routes->get('modificar/(:num)/(:num)', 'Participante::editarParticipante/$1/$2');
+    $routes->post('actualizar', 'Participante::actualizarParticipante');
+});
+
 service('auth')->routes($routes);
 
 /*

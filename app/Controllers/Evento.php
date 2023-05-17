@@ -54,7 +54,8 @@ class Evento extends BaseController
         $eventoFiltrado = $this->eventoModel->listarEvento('id_evento, nombre_evento, descripcion_evento,fecha_evento, descripcion_evento, username, estado_evento', $estadoEvento);
         $eventoFiltrado = $eventoFiltrado->get()->getResultArray();
         // echo '<pre>';
-        // var_dump($eventoFiltrado->get()->getResultArray());
+        // var_dump($this->eventoModel->getLastQuery());
+        // var_dump($eventoFiltrado);
         return view('evento/listar_eventos', ['evento' => $eventoFiltrado]);
     }
 }
