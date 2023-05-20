@@ -3,7 +3,7 @@
         'name' => 'codeigniter4/framework',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '17aee93167ae146df4fc9a99b78fc0c993fb5cc4',
+        'reference' => '92e63c2a920e52377d2d7b17ca937caf725a674a',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -28,7 +28,7 @@
         'codeigniter4/framework' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '17aee93167ae146df4fc9a99b78fc0c993fb5cc4',
+            'reference' => '92e63c2a920e52377d2d7b17ca937caf725a674a',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -459,6 +459,15 @@
             'install_path' => __DIR__ . '/../sebastian/version',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'setasign/fpdf' => array(
+            'pretty_version' => '1.8.5',
+            'version' => '1.8.5.0',
+            'reference' => 'f4104a04c9a3f95c4c26a0a0531abebcc980987a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../setasign/fpdf',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'symfony/console' => array(
             'pretty_version' => 'v6.2.10',

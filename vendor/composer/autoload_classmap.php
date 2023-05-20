@@ -538,6 +538,7 @@ return array(
     'Doctrine\\Instantiator\\Exception\\UnexpectedValueException' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/UnexpectedValueException.php',
     'Doctrine\\Instantiator\\Instantiator' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/Instantiator.php',
     'Doctrine\\Instantiator\\InstantiatorInterface' => $vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator/InstantiatorInterface.php',
+    'FPDF' => $vendorDir . '/setasign/fpdf/fpdf.php',
     'Faker\\Calculator\\Ean' => $vendorDir . '/fakerphp/faker/src/Faker/Calculator/Ean.php',
     'Faker\\Calculator\\Iban' => $vendorDir . '/fakerphp/faker/src/Faker/Calculator/Iban.php',
     'Faker\\Calculator\\Inn' => $vendorDir . '/fakerphp/faker/src/Faker/Calculator/Inn.php',

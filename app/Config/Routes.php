@@ -47,6 +47,8 @@ $routes->group('participantes', static function ($routes) {
     $routes->post('insertar', 'Participante::insertarParticipante');
     $routes->get('modificar/(:num)/(:num)', 'Participante::editarParticipante/$1/$2');
     $routes->post('actualizar', 'Participante::actualizarParticipante');
+    $routes->get('imprimir-boleto/(:num)/(:num)', 'Participante::imprimirBoletoParticipante/$1/$2');
+    $routes->get('imprimir-boleto/(:num)', 'Participante::imprimirBoletoParticipante/$1');
 });
 
 service('auth')->routes($routes);

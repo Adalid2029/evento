@@ -1,6 +1,7 @@
 <?php
 return [
     'tituloIdParticipante' => 'N° Participante',
+    'tituloEvento' => 'Nombre Evento',
     'tituloIdEvento' => 'N° Evento',
     'tituloNombres' => 'Nombres',
     'tituloApellidos' => 'Apellidos',
@@ -19,6 +20,8 @@ return [
     'participanteTituloAgregarParticipante' => 'Agregar Participante',
     'participanteTituloActualizarParticipante' => 'Actualizar Participante',
     'participanteTituloEditarParticipante' => 'Editar Participante',
+    'participanteTituloImprimirEvento' => 'Imprimir Boleto',
+    'participanteTituloImprimirTodoEvento' => 'Imprimir Todo',
 
 
 ];

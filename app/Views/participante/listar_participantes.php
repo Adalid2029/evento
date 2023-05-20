@@ -25,6 +25,7 @@
             <div class="col-12">
                 <div class="float-right">
                     <a href="#" class="btn btn-primary create-event-btn" id="btn-agregar-participante" data-toggle="modal" data-target="#creat-event"><?= lang('TablaParticipante.tituloAdicionarParticipante') ?></a>
+                    <a href="<?= site_url(route_to('Participante::imprimirBoletoParticipante', $id_evento)) ?>" class="btn btn-primary create-event-btn" target="_blank"><?= lang('TablaParticipante.participanteTituloImprimirTodoEvento') ?></a>
                 </div>
                 <table class="table" id="tbl-listar-participantes">
                     <thead>
@@ -66,7 +67,8 @@
             ajax: '<?= base_url('participantes/listar-ajax/' . $id_evento . '') ?>',
             columnDefs: [{
                     targets: 0,
-                    orderable: false
+                    orderable: false,
+
                 }, //target -1 means last column
             ],
             language: {

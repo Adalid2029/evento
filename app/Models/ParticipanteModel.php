@@ -38,4 +38,12 @@ class ParticipanteModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function listarEventoParticipante($condicion = [])
+    {
+        $this->select('*');
+        $this->join('ci_evento', 'ci_participante.id_evento = ci_evento.id_evento');
+        empty($condicion) ?: $this->where($condicion);
+        return $this;
+    }
 }

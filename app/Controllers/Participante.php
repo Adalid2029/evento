@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use \Hermawan\DataTables\DataTable;
 use App\Models\ParticipanteModel;
 use CodeIgniter\API\ResponseTrait;
+use App\Controllers\Reportes\EventoReporte;
 
 class Participante extends BaseController
 {
@@ -30,8 +31,9 @@ class Participante extends BaseController
     }
     public function listarParticipanteAjax($idEvento)
     {
-        $participantes = $this->participanteModel->select('id_participante, nombres, apellidos, celular, correo_electronico')->where(['id_evento' => $idEvento]);
+        $participantes = $this->participanteModel->select('id_evento, id_participante, nombres, apellidos, celular, correo_electronico')->where(['id_evento' => $idEvento]);
         return DataTable::of($participantes)
+            ->hide('id_evento')
             ->add('action', function ($row) {
                 $row = (array)$row;
                 return '
@@ -43,6 +45,7 @@ class Participante extends BaseController
                     <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item btn-editar-participante" href="javascript:void(0)" data-id-participante="' . $row['id_participante'] . '" data-toggle="modal" data-target="#creat-event">' . lang('TablaParticipante.tituloEditarParticipante') . '</a>
                         <a class="dropdown-item btn-eliminar-participante" href="javascript:void(0)" data-id-participante="' . $row['id_participante'] . '" >' . lang('TablaParticipante.tituloEliminarParticipante') . '</a>
+                        <a class="dropdown-item" href="' . site_url('participantes/imprimir-boleto/' . $row['id_evento'] . '/' . $row['id_participante']) . '" target="_blank">' . lang('TablaParticipante.participanteTituloImprimirEvento') . '</a>
                     </div>
                 </div>';
             }, 'first')
@@ -118,5 +121,16 @@ class Participante extends BaseController
         } else {
             return $this->respond(['tipo' => 'incorrecto', 'data' => ['error' => $validation->getErrors()]], 500);
         }
+    }
+    public function imprimirBoletoParticipante(int $idEvento, int $idParticipante = null)
+    {
+        $this->response->setContentType('application/pdf');
+        $eventoReporte = new EventoReporte();
+
+        if (is_null($idParticipante))
+            $eventoParticipante = $this->participanteModel->listarEventoParticipante(['ci_evento.id_evento' => $idEvento])->get()->getResultArray();
+        else
+            $eventoParticipante = $this->participanteModel->listarEventoParticipante(['ci_evento.id_evento' => $idEvento, 'id_participante' => $idParticipante])->get()->getResultArray();
+        $eventoReporte->reporteBoletoParticipante($eventoParticipante);
     }
 }
